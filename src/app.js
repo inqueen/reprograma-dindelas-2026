@@ -1,13 +1,38 @@
+const dotenv = require("dotenv");
 const express = require("express");
-const mongoose = require("mongoose");
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const path = require("path");
 const app = express();
 
+// UTILIZANDO ENV
+dotenv.config();
+let uri = process.env.MONGODB_URI;
+
+// VERIFICANDO ENV
+if (!uri) {
+  console.error("Erro: MONGODB_URI não está definida. Verificar o arquivo .env");
+  process.exit(1);
+}
+
 //MONGO ATLAS
-mongoose.connect(
-  "mongodb+srv://adm_dindin_master:em2tcz8qKjbQ8Ta@cluster0-dnqcd.mongodb.net/test?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+const client = new MongoClient(uri,
+  {
+    serverApi: {
+      version: ServerApiVersion.v1,
+      strict: true,
+      deprecationErrors: true,
+    }
+  });
+async function run() {
+  try {
+    await client.connect();
+    await client.db("admin").command({ ping: 1 });
+    console.log("Conectada ao MongoDB!");
+  } catch (err) {
+    console.error("Erro ao conectar ao MongoDB: ", err);
+  }
+}
+run().catch(console.dir);
 
 //ROTAS
 const index = require("./routes/index");
@@ -18,7 +43,7 @@ const sessionInvestidoras = require("./routes/sessionInvestidorasRoute");
 
 app.use(express.json());
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",

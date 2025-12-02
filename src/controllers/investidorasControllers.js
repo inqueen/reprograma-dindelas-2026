@@ -4,7 +4,7 @@ const bcryptSalt = 8;
 
 //GET ALL INVESTIDORAS
 exports.get = (req, res) => {
-  Investidoras.find(function(err, investidoras) {
+  Investidoras.find(function (err, investidoras) {
     if (err) res.status(500).send(err);
     res.status(200).send(investidoras);
   });
@@ -13,21 +13,21 @@ exports.get = (req, res) => {
 //GET BY CNPJ
 exports.getByCNPJ = (req, res) => {
   const cnpj = req.params.cnpj;
-  Investidoras.find({ cnpj }, function(err, investidoras) {
+  Investidoras.find({ cnpj }, function (err, investidoras) {
     if (err)
       res
         .status(500)
         .send({
-          message: `Infelizmente não localizamos essa investidora com ${cnpj}`
+          message: `Não localizamos essa investidora com o ${cnpj}`
         });
     res.status(200).send(investidoras);
   });
 };
 
 //POST INITIAL DATA OF THE INVESTIDORAS
-exports.post = function(req, res) {
+exports.post = function (req, res) {
   const investidoras = new Investidoras(req.body);
-  investidoras.save(function(err) {
+  investidoras.save(function (err) {
     if (err) res.status(500).send(err);
     else {
       res.status(201).send({
@@ -46,11 +46,11 @@ exports.updateBusiness = (req, res) => {
   Investidoras.updateOne(
     { cnpj: req.params.cnpj },
     { tipoNegocio: req.body.tipoNegocio },
-    function(err) {
+    function (err) {
       if (err) return res.status(500).send({ message: err });
       res
         .status(200)
-        .send({ message: "Tipo de Negócio atualizado com sucesso!" });
+        .send({ message: "Tipo de Negócio atualizado com sucesso" });
     }
   );
 };
@@ -59,19 +59,19 @@ exports.updateBusiness = (req, res) => {
 exports.deleteInvestor = (req, res) => {
   const nome = req.params.nome;
 
-  Investidoras.findOne({ nome }, function(err, investidora) {
+  Investidoras.findOne({ nome }, function (err, investidora) {
     if (err) res.status(500).send(err);
 
     if (!investidora)
       return res
         .status(200)
-        .send({ message: "Infelizmente não localizamos essa investidora" });
+        .send({ message: "Não localizamos essa investidora" });
 
-    investidora.remove(function(err) {
+    investidora.remove(function (err) {
       if (!err) {
         res
           .status(200)
-          .send({ message: "Investidora removida com sucesso..." });
+          .send({ message: "Investidora removida com sucesso" });
       }
     });
   });
@@ -84,13 +84,13 @@ exports.postHashPass = async (req, res) => {
 
   const hashPass = bcrypt.hashSync(password, salt);
   const newInv = new Investidoras({ cnpj, hashPass });
-  newInv.save(function(err) {
+  newInv.save(function (err) {
     if (err) {
       res.status(500).send(err);
     } else {
       res.status(201).send({
         status: true,
-        message: "Investidora cadastrada com sucesso!"
+        message: "Investidora cadastrada com sucesso"
       });
     }
   });

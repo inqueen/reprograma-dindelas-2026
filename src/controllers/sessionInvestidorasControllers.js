@@ -35,6 +35,6 @@ exports.accessToken = (req, res) => {
       })
     });
   } catch {
-    return res.status(401).send({ error: "Errado" });
+    return res.status(401).send({ error: "Autorização negada" });
   }
 };

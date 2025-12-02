@@ -7,7 +7,7 @@ const empreendedoraAuthController = require("../controllers/sessionEmpreendedora
  * @apiName accessToken
  * @apiGroup Session Empreendedoras
  *
- * @apiParam (Request Body) {Number} cpf Dado individual
+ * @apiParam (Request Body) {Number} cpf Dado Sensível
  *
  * @apiSuccessExample {Objeto}
  *    user: {
@@ -18,7 +18,7 @@ const empreendedoraAuthController = require("../controllers/sessionEmpreendedora
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 401
  *     {
- *       "error": "Errado"
+ *       "error": "Autorização negada"
  *     }
  */
 router.post("/login", empreendedoraAuthController.accessToken);

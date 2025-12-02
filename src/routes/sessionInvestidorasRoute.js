@@ -18,7 +18,7 @@ const investidoraAuthController = require("../controllers/sessionInvestidorasCon
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 401
  *     {
- *       "error": "Errado"
+ *       "error": "Autorização negada"
  *     }
  */
 router.post("/investidoras", investidoraAuthController.accessToken);
