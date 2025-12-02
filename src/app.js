@@ -1,25 +1,35 @@
+const dotenv = require("dotenv");
 const express = require("express");
-const mongoose = require("mongoose");
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const path = require("path");
 const app = express();
-const uri = process.env.MONGODB_URI;
+
+// UTILIZANDO ENV
+dotenv.config();
+let uri = process.env.MONGODB_URI;
+
+// VERIFICANDO ENV
+if (!uri) {
+  console.error("Erro: MONGODB_URI não está definida. Verificar o arquivo .env");
+  process.exit(1);
+}
 
 //MONGO ATLAS
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
+const client = new MongoClient(uri,
+  {
+    serverApi: {
+      version: ServerApiVersion.v1,
+      strict: true,
+      deprecationErrors: true,
+    }
+  });
 async function run() {
   try {
     await client.connect();
     await client.db("admin").command({ ping: 1 });
     console.log("Conectada ao MongoDB!");
-  } finally {
-    await client.close();
+  } catch (err) {
+    console.error("Erro ao conectar ao MongoDB: ", err);
   }
 }
 run().catch(console.dir);
