@@ -11,6 +11,4 @@ jobs:
       - run: npm install bats
       - run: npx bats -v
       - name: MongoDB uri
-        run: .env  
-        env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        run: echo "${{ secrets.MONGODB_URI }}"
