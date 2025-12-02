@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://danikarasawa_db_user:sVje6X2wsGuBa4iy@cluster0.d1aho1y.mongodb.net/?appName=Cluster0"
+const uri = "mongodb+srv://${{secrets.MONGODB_USERNAME}}:${{secrets.MONGODB_PASSWORD}}@${{secrets.MONGODB_CLUSTER}}"
 const path = require("path");
 const app = express();
 
