@@ -1,12 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://${{secrets.MONGODB_USERNAME}}:${{secrets.MONGODB_PASSWORD}}@${{secrets.MONGODB_CLUSTER}}"
 const path = require("path");
 const app = express();
+const uri = process.env.MONGODB_URI;
 
 //MONGO ATLAS
-
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
