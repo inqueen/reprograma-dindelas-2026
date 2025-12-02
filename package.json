@@ -36,6 +36,7 @@
     "semver": "^7.7.3"
   },
   "devDependencies": {
+    "@types/node": "^24.10.1",
     "nodemon": "^3.1.11"
   }
 }

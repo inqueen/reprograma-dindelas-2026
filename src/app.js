@@ -1,13 +1,29 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://danikarasawa_db_user:sVje6X2wsGuBa4iy@cluster0.d1aho1y.mongodb.net/?appName=Cluster0"
 const path = require("path");
 const app = express();
 
 //MONGO ATLAS
-mongoose.connect(
-  "mongodb+srv://adm_dindin_master:em2tcz8qKjbQ8Ta@cluster0-dnqcd.mongodb.net/test?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+async function run() {
+  try {
+    await client.connect();
+    await client.db("admin").command({ ping: 1 });
+    console.log("Conectada ao MongoDB!");
+  } finally {
+    await client.close();
+  }
+}
+run().catch(console.dir);
 
 //ROTAS
 const index = require("./routes/index");
