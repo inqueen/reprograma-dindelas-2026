@@ -5,7 +5,7 @@ const bcryptSalt = 8;
 
 //GET ALL EMPREENDEDORAS
 exports.get = (req, res) => {
-  Empreendedoras.find(function(err, empreendedoras) {
+  Empreendedoras.find(function (err, empreendedoras) {
     if (err) res.status(500).send(err);
     res.status(200).send(empreendedoras);
   });
@@ -14,20 +14,20 @@ exports.get = (req, res) => {
 //GET BY CPF
 exports.getByCPF = (req, res) => {
   const cpf = req.params.cpf;
-  Empreendedoras.findOne({ cpf }, function(err, empreendedora) {
+  Empreendedoras.findOne({ cpf }, function (err, empreendedora) {
     if (err)
       res.status(500).send({
-        message: `Infelizmente não localizamos essa empreendedora com ${cpf}`
+        message: `Não localizamos essa empreendedora com o ${cpf}`
       });
     res.status(200).send(empreendedora);
   });
 };
 
 //POST INITIAL DATA OF THE EMPREENDEDORAS
-exports.post = function(req, res) {
+exports.post = function (req, res) {
   const empreendedoras = new Empreendedoras(req.body);
 
-  empreendedoras.save(function(err) {
+  empreendedoras.save(function (err) {
     if (err) res.status(500).send(err);
     else {
       res.status(201).send({
@@ -40,15 +40,15 @@ exports.post = function(req, res) {
 
 //NEW CREDIT REQUEST
 //New sprint
-  
+
 //UPDATE TELEFONE
 exports.updatePhone = (req, res) => {
   Empreendedoras.updateOne(
     { cpf: req.params.cpf },
     { telefone: req.body.telefone },
-    function(err) {
+    function (err) {
       if (err) return res.status(500).send({ message: err });
-      res.status(200).send({ message: "Telefone atualizado com sucesso!" });
+      res.status(200).send({ message: "Telefone atualizado com sucesso" });
     }
   );
 };
@@ -57,17 +57,17 @@ exports.updatePhone = (req, res) => {
 exports.deleteEntrepreneur = (req, res) => {
   const cpf = req.params.cpf;
 
-  Empreendedoras.findOne({ cpf }, function(err, empreendedora) {
+  Empreendedoras.findOne({ cpf }, function (err, empreendedora) {
     if (!empreendedora)
       return res
         .status(200)
-        .send({ message: "Infelizmente não localizamos essa investidora" });
+        .send({ message: `Não localizamos essa investidora com o ${cpf}` });
 
-    empreendedora.remove(function(err) {
+    empreendedora.remove(function (err) {
       if (!err) {
         res
           .status(200)
-          .send({ message: "Empreendedora removida com sucesso..." });
+          .send({ message: "Empreendedora removida com sucesso" });
       }
     });
   });
@@ -80,13 +80,13 @@ exports.postHashPass = async (req, res) => {
 
   const hashPass = bcrypt.hashSync(password, salt);
   const newEmp = new Empreendedoras({ cpf, hashPass });
-  newEmp.save(function(err) {
+  newEmp.save(function (err) {
     if (err) {
       res.status(500).send(err);
     } else {
       res.status(201).send({
         status: true,
-        message: "Empreendedora cadastrada com sucesso!"
+        message: "♥ Empreendedora cadastrada com sucesso ♥"
       });
     }
   });

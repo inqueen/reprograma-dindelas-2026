@@ -145,12 +145,12 @@ router.put("/:cnpj", controller.updateBusiness);
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
  *
- *     { message: "Investidora removida com sucesso..." }
+ *     { message: "Investidora removida com sucesso" }
  *
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 500
  *     {
- *       message: "Infelizmente não localizamos essa investidora"
+ *       message: "Infelizmente não localizamos essa investidora com o ${cpf}"
  *     }
  */
 router.delete("/:nome", controller.deleteInvestor);

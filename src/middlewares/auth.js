@@ -5,7 +5,7 @@ const { promisify } = require("util");
 module.exports = async (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader) {
-    return res.status(401).send({ error: "Token não listado" });
+    return res.status(401).send({ error: "Token não autorizado" });
   }
 
   const [, token] = authHeader.split(" ");

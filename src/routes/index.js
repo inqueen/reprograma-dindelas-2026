@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", function(req, res) {
+router.get("/", function (req, res) {
   res.status(200).send({
-    title: "MELI + {Reprograma} | Projeto Final | Dani Karasawa",
-    text: "Só vem 2020 ♥",
-    version: "1.0.0"
+    title: "Novo Dindelas 2026"
+    , text: "Projeto para portfólio Desenvolvedora Full Stack"
+    , author: "Dani Beleze"
+    , version: "1.1.0"
   });
 });
 

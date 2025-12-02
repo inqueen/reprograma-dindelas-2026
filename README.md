@@ -3,6 +3,8 @@
 ## Breaking News~
 
 O objetivo é modernizar essa aplicação e incluí-la no portfólio 2026:
+* Revisar e atualizar dependências
+* Revisar estrutura da API
 * Ampliar a API
 * Construir um Front-end Mobile First
 * Implementar itens de Acessibilidade

@@ -7,29 +7,55 @@ const EmpreendedorasSchema = new mongoose.Schema(
     nome: { type: String },
     telefone: { type: String },
     idade: { type: Number },
-    genero: { type: String, enum: ["Feminino", "Masculino", "Transgênero"] },
+    genero: {
+      type: String, enum: [
+        "Feminino"
+        , "Masculino"
+        , "Não binário"
+        , "Transgênero"
+        , "Prefiro não responder"
+      ]
+    },
     estadoCivil: {
-      type: String,
-      enum: ["Solteira", "União Estável", "Casada", "Divorciada"]
+      type: String, enum: [
+        "Solteira"
+        , "União Estável"
+        , "Casada"
+        , "Divorciada"
+        , "Prefiro não responder"
+      ]
     },
     escolaridade: {
-      type: String,
-      enum: [
-        "Ensino Fundamental",
-        "Ensino Médio",
-        "Ensino Superior",
-        "Pós-Graduação"
+      type: String, enum: [
+        "Ensino Fundamental"
+        , "Ensino Médio"
+        , "Ensino Superior"
+        , "Pós-Graduação"
       ]
     },
     tipoNegocio: [
       {
-        type: String,
-        enum: ["Alimentação", "Beleza", "Tecnologia", "Vestuário"]
+        type: String, enum: [
+          "Alimentação"
+          , "Beleza"
+          , "Entrega"
+          , "Tecnologia"
+          , "Vestuário"
+          , "Outros"
+        ]
       }
     ],
     tempoNegocio: { type: Number },
     creditoSolicitado: { type: Number },
-    formaPagamento: { type: String, enum: ["À vista", "Parcelado"] },
+    formaPagamento: {
+      type: String, enum: [
+        "Boleto - parcela única"
+        , "Boleto - parcelado"
+        , "Débito"
+        , "Pix - parcela única"
+        , "Pix - parcelado"
+      ]
+    },
     parcelamento: { type: Number },
     creditoInformacoes: { type: String },
     creditoRecebido: { type: Boolean },
@@ -37,7 +63,14 @@ const EmpreendedorasSchema = new mongoose.Schema(
     relatoData: { type: Date },
     relato: { type: String },
     emojiData: { type: Date },
-    emoji: { type: String, enum: ["Feliz", "Preocupada", "Triste"] }
+    emoji: {
+      type: String, enum: [
+        "Feliz"
+        , "Indiferente"
+        , "Preocupada"
+        , "Triste"
+      ]
+    }
   },
   {
     versionKey: false

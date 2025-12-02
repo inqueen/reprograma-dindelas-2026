@@ -39,7 +39,7 @@ router.get("/empreendedoras", controller.get);
  *    HTTP/1.1 201 CREATED
  * {
  *       status: true,
- *       message: "Empreendedora cadastrada com sucesso!"
+ *       message: "Empreendedora cadastrada com sucesso"
  *    }
  *
  * @apiErrorExample Error-Response:
@@ -105,7 +105,7 @@ router.post("/empreendedoras", controller.post);
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 500
  *     {
- *       "error": "Infelizmente não localizamos essa empreendedora com ${cpf}"
+ *       "error": "Infelizmente não localizamos essa empreendedora com o ${cpf}"
  *     }
  */
 router.get("/:cpf", controller.getByCPF);
@@ -120,7 +120,7 @@ router.get("/:cpf", controller.getByCPF);
  * @apiSuccessExample {Objeto}
  *    HTTP/1.1 200 OK
  *    {
- *       "message": "Telefone atualizado com sucesso!"
+ *       "message": "Telefone atualizado com sucesso"
  *    }
  *
  * @apiErrorExample Error-Response:
@@ -145,13 +145,13 @@ router.put("/:cpf", controller.updatePhone);
  * @apiSuccessExample {Objeto}
  *    HTTP/1.1 200 OK
  *    {
- *       "message": "Empreendedora removida com sucesso..."
+ *       "message": "Empreendedora removida com sucesso"
  *    }
  *
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 200
  *     {
- *       "message": "Infelizmente não localizamos essa investidora"
+ *       "message": "Infelizmente não localizamos essa investidora com o ${cpf}"
  *     }
  */
 router.delete("/:cpf", controller.deleteEntrepreneur);

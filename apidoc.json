@@ -1,10 +1,10 @@
 {
-    "name": "Empreendedoras + Investidoras - Dani Karasawa",
-    "version": "1.0.0",
-    "description": "apiDoc do projeto final Mercado Livre + {reprograma}",
-    "title": "Empreendedoras + Investidoras - Dani Karasawa",
-    "url": "https://empreendedoras-api.herokuapp.com",
-    "template": {
-      "forceLanguage": "en"
-    }
+  "name": "Empreendedoras + Investidoras - Dani Karasawa",
+  "version": "1.1.0",
+  "description": "apiDoc do projeto para portfólio Desenvolvedora Full Stack",
+  "title": "Empreendedoras + Investidoras - Dani Karasawa",
+  "url": "https://empreendedoras-api.herokuapp.com",
+  "template": {
+    "forceLanguage": "pt-br"
   }
+}
