@@ -62,7 +62,7 @@ app.get("/apidoc", (req, res) => {
 
 app.use("/E", empreendedoras);
 app.use("/I", investidoras);
-app.use("/SE", sessionEmpreendedoras);
-app.use("/SI", sessionInvestidoras);
+app.use("/ES", sessionEmpreendedoras);
+app.use("/IS", sessionInvestidoras);
 
 module.exports = app;

@@ -4,7 +4,7 @@ const controller = require("../controllers/empreendedorasControllers");
 const authMiddleware = require("../middlewares/auth");
 
 /**
- * @api {get} /e/empreendedoras Lista completa de empreendedoras
+ * @api {get} /E/empreendedoras Lista completa de empreendedoras
  * @apiName get
  * @apiGroup Empreendedoras
  *
@@ -31,7 +31,7 @@ const authMiddleware = require("../middlewares/auth");
 router.get("/empreendedoras", controller.get);
 
 /**
- * @api {post} /e/register Registro de login e senha com encriptação JWT e Bcrypt da empreendedora
+ * @api {post} /E/register Registro de login e senha com encriptação JWT e Bcrypt da empreendedora
  * @apiName post
  * @apiGroup Empreendedoras
  *
@@ -53,7 +53,7 @@ router.post("/register", controller.postHashPass);
 router.use(authMiddleware);
 
 /**
- * @api {post} /e/empreendedoras Cadastro inicial da empreendedora
+ * @api {post} /E/empreendedoras Cadastro inicial da empreendedora
  * @apiName post
  * @apiGroup Empreendedoras
  *
@@ -84,7 +84,7 @@ router.use(authMiddleware);
 router.post("/empreendedoras", controller.post);
 
 /**
- * @api {get} /e/:cpf Requisição via CPF da empreendedora
+ * @api {get} /E/:cpf Requisição via CPF da empreendedora
  * @apiName getByCPF
  * @apiGroup Empreendedoras
  *
@@ -111,7 +111,7 @@ router.post("/empreendedoras", controller.post);
 router.get("/:cpf", controller.getByCPF);
 
 /**
- * @api {put} /e/:cpf Requisição via CPF da empreendedora para atualizar telefone
+ * @api {put} /E/:cpf Requisição via CPF da empreendedora para atualizar telefone
  * @apiName updatePhone
  * @apiGroup Empreendedoras
  *
@@ -136,7 +136,7 @@ router.put("/:cpf", controller.updatePhone);
 //router.put("/:cpf", controller.putCredit);
 
 /**
- * @api {delete} /e/:nome Requisição via cpf da empreendedora para deletar cadastro
+ * @api {delete} /E/:nome Requisição via cpf da empreendedora para deletar cadastro
  * @apiName deleteEntrepreneur
  * @apiGroup Empreendedoras
  *
