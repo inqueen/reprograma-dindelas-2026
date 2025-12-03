@@ -1,11 +1,10 @@
 define({
   "name": "Empreendedoras + Investidoras - Dani Karasawa",
-  "version": "1.0.0",
-  "description": "apiDoc do projeto final Mercado Livre + {reprograma}",
-  "title": "Empreendedoras + Investidoras - Dani Karasawa",
+  "version": "1.1.0",
+  "description": "Portfólio Dev Full Stack: aplicação de crédito para mulheres empreendedoras brasileiras.",
   "url": "https://empreendedoras-api.herokuapp.com",
   "template": {
-    "forceLanguage": "en"
+    "forceLanguage": "pt_br"
   },
   "sampleUrl": false,
   "defaultVersion": "0.0.0",

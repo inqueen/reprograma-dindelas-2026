@@ -1,10 +1,10 @@
 {
   "name": "Empreendedoras + Investidoras - Dani Karasawa",
   "version": "1.1.0",
-  "description": "apiDoc do projeto para portfólio Desenvolvedora Full Stack",
+  "description": "Portfólio Dev Full Stack: aplicação de crédito para mulheres empreendedoras brasileiras.",
   "title": "Empreendedoras + Investidoras - Dani Karasawa",
   "url": "https://empreendedoras-api.herokuapp.com",
   "template": {
-    "forceLanguage": "pt-br"
+    "forceLanguage": "pt_br"
   }
 }

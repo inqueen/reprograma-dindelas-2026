@@ -60,8 +60,8 @@ app.get("/apidoc", (req, res) => {
   res.sendFile(path.join(__dirname + "/../doc/index.html"));
 });
 
-app.use("/e", empreendedoras);
-app.use("/i", investidoras);
+app.use("/E", empreendedoras);
+app.use("/I", investidoras);
 app.use("/SE", sessionEmpreendedoras);
 app.use("/SI", sessionInvestidoras);
 
