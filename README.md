@@ -1,16 +1,29 @@
-# Projeto Final | Back-end | {reprograma} + Mercado Livre | <s>Dezembro de 2019</s> | 2026
+# Projeto para portfólio Full Stack Dev | 2026
 
 ## Breaking News~
 
 O objetivo é modernizar essa aplicação e incluí-la no portfólio 2026:
-* Revisar e atualizar dependências
-* Revisar estrutura da API
+
+* ✅ Revisar e atualizar dependências `2 dias`
+  
+  ✓ Resolver bibliotecas descontinuadas ou com alto grau de vulnerabilidade
+  
+  ✓ Criar e implementar `.env` (local) e `secret` (produtivo) para dados sensíveis como conexão com `MongoDB`
+  
+  ---
+
+* 🛠️ Revisar estrutura da API `WIP`
+  * Atualizar `apidoc`
+  * Entender o contexto das regras implementadas
+  * Criar testes para regras disponíveis
+     
 * Ampliar a API
-* Construir um Front-end Mobile First
-* Implementar itens de Acessibilidade
+* Construir um Front-end Mobile First e implementar Acessibilidade
+* Deploy em nuvem
 
 _Abaixo, você encontra a documentação original deste projeto._
 
+### Projeto Final | Back-end | {reprograma} + Mercado Livre | Dezembro de 2019
 ### Em 2019
 Projeto apresentado + Certificado recebido ♥ 
 Até o <b><i>dia 31 de dezembro</b></i> vou continuar implementando novas funcionalidades. A meta é criar <b>pedido</b> e <b>liberação de crédito</b> conectando as <i>collections</i> <b>empreendedoras</b> e <b>investidoras</b>.   
