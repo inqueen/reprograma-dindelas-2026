@@ -3,7 +3,7 @@ const router = express.Router();
 const empreendedoraAuthController = require("../controllers/sessionEmpreendedorasControllers");
 
 /**
- * @api {post} /SE/:cpf Requisição via CPF da empreendedora para realizar login
+ * @api {post} /ES/:cpf Requisição via CPF da empreendedora para realizar login
  * @apiName accessToken
  * @apiGroup Session Empreendedoras
  *

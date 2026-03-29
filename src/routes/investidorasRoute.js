@@ -4,7 +4,7 @@ const controller = require("../controllers/investidorasControllers");
 const authMiddleware = require("../middlewares/auth");
 
 /**
- * @api {get} /i/investidoras Lista completa de investidoras
+ * @api {get} /I/investidoras Lista completa de investidoras
  * @apiName get
  * @apiGroup Investidoras
  *
@@ -31,7 +31,7 @@ const authMiddleware = require("../middlewares/auth");
 router.get("/investidoras", controller.get);
 
 /**
- * @api {post} /i/register Registro de login e senha com encriptação JWT e Bcrypt da investidora
+ * @api {post} /I/register Registro de login e senha com encriptação JWT e Bcrypt da investidora
  * @apiName post
  * @apiGroup Investidoras
  *
@@ -53,7 +53,7 @@ router.post("/register", controller.postHashPass);
 router.use(authMiddleware);
 
 /**
- * @api {post} /i/investidoras Cadastro inicial da investidora
+ * @api {post} /I/investidoras Cadastro inicial da investidora
  * @apiName post
  * @apiGroup Investidoras
  *
@@ -84,7 +84,7 @@ router.use(authMiddleware);
 router.post("/investidoras", controller.post);
 
 /**
- * @api {get} /i/:cnpj Requisição via CNPJ da investidora
+ * @api {get} /I/:cnpj Requisição via CNPJ da investidora
  * @apiName get
  * @apiGroup Investidoras
  *
@@ -116,7 +116,7 @@ router.get("/:cnpj", controller.getByCNPJ);
 //router.put("/:cnpj", controller.updateClient)
 
 /**
- * @api {put} /i/:cnpj Requisição via CNPJ da empreendedora para atualizar tipo de negócio
+ * @api {put} /I/:cnpj Requisição via CNPJ da empreendedora para atualizar tipo de negócio
  * @apiName put
  * @apiGroup Investidoras
  *
@@ -136,7 +136,7 @@ router.get("/:cnpj", controller.getByCNPJ);
 router.put("/:cnpj", controller.updateBusiness);
 
 /**
- * @api {delete} /i/:nome Requisição via nome da investidora para deletar cadastro
+ * @api {delete} /I/:nome Requisição via nome da investidora para deletar cadastro
  * @apiName delete
  * @apiGroup Investidoras
  *

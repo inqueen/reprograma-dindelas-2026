@@ -6,14 +6,44 @@ const InvestidorasSchema = new mongoose.Schema(
     hashPass: { type: String },
     nome: { type: String },
     telefone: { type: String },
-    genero: { type: String, enum: ["Feminino", "Masculino", "Transgênero"] },
-    ticket: { type: Number },
+    idade: { type: Number },
+    genero: {
+      type: String, enum: [
+        "Feminino"
+        , "Masculino"
+        , "Transgênero"
+      ]
+    },
+    estadoCivil: {
+      type: String, enum: [
+        "Solteira"
+        , "União Estável"
+        , "Casada"
+        , "Divorciada"
+        , "Prefiro não responder"
+      ]
+    },
+    escolaridade: {
+      type: String, enum: [
+        "Ensino Fundamental"
+        , "Ensino Médio"
+        , "Ensino Superior"
+        , "Pós-Graduação"
+      ]
+    },
     tipoNegocio: [
       {
         type: String,
-        enum: ["Alimentação", "Beleza", "Tecnologia", "Vestuário"]
+        enum: [
+          "Alimentação"
+          , "Beleza"
+          , "Financeiro"
+          , "Tecnologia"
+          , "Vestuário"
+        ]
       }
     ],
+    ticket: { type: Number },
     taxaJuros: { type: Number },
     parcelasMaximas: { type: Number },
     investimentoTotal: { type: Number },
